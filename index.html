@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analysis Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Stock Market Analysis Dashboard</h1>
+        <nav>
+            <a href="#current">Current Stock Info</a>
+            <a href="#portfolio">Portfolio Tracker</a>
+            <a href="#history">Historical Charts</a>
+        </nav>
+    </header>
+
+    <!-- Current Stock Information Section -->
+    <section id="current">
+        <h2>Current Stock Information</h2>
+        <label for="stock-symbol">Enter Stock Symbol:</label>
+        <input type="text" id="stock-symbol" placeholder="E.g., AAPL, MSFT">
+        <button onclick="fetchStockData()">Get Stock Info</button>
+        <div id="stock-info">
+            <!-- Stock data will be displayed here -->
+        </div>
+    </section>
+
+    <!-- Portfolio Tracker Section -->
+    <section id="portfolio">
+        <h2>Portfolio Tracker</h2>
+        <label for="portfolio-symbol">Stock Symbol:</label>
+        <input type="text" id="portfolio-symbol" placeholder="E.g., TSLA, GOOG">
+    
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" placeholder="E.g., 10">
+    
+        <button onclick="addStockToPortfolio()">Add to Portfolio</button>
+        
+        <div id="portfolio-list">
+            <h3>Your Portfolio</h3>
+            <!-- Portfolio items will be displayed here -->
+        </div>
+    </section>
+    
+
+    <!-- Historical Stock Price Charts Section -->
+    <section id="history">
+        <h2>Historical Stock Price Charts</h2>
+        <label for="history-symbol">Enter Stock Symbol:</label>
+        <input type="text" id="history-symbol" placeholder="E.g., NFLX, AMZN">
+
+        <button onclick="fetchHistoricalData()">See Price Chart</button>
+        <canvas id="stockChart"></canvas>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Stock Analysis Dashboard</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
